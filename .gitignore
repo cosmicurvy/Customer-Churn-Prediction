@@ -1,0 +1,14 @@
+# VS Code
+.vscode/
+
+# Conda / virtual environments
+.conda/
+
+# Python cache
+__pycache__/
+__pycache__
+
+# Jupyter
+.ipynb_checkpoints/
+
+data/vis_data.csv
