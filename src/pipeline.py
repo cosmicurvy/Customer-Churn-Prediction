@@ -1,7 +1,7 @@
 import pickle
 
 # load the saved encoder and model
-def load_artifacts(encoder_path='models/encoder.pkl', model_path = 'models/gradient_model.pkl'):
+def load_artifacts(encoder_path='models/encoder.pkl', model_path = 'models/logistic_reg.pkl'):
     with open(encoder_path, 'rb') as f:
         encoder = pickle.load(f)
     
