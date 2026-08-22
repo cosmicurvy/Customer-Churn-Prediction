@@ -33,7 +33,7 @@ This includes:
 | Category | Tools |
 |---|---|
 | Langauge | Python |
-| Libraries | Pandas, Numpy, Matplotlib, Seaborn, Scikit-learn Imbalanced-learn and SHAP|
+| Libraries | Pandas, Numpy, Matplotlib, Seaborn, Scikit-learn Imbalanced-learn, SHAP and Streamlit|
 | Envinronment | VS code and Jupyter Notebook|
 
 ## Steps In The Project
@@ -52,6 +52,9 @@ Train multiple models (Logistic Regression, Decision Tree, Random Forest, XGBoos
 
 ### Model Evaluation
 Evaluate the performance of the model using recall as False negatives are more costly in customer churn analysis. 
+
+### Deployment
+The final model is deployed using streamlit on Streamlit Cloud. 
 
 ### Conclusion and insights
 Summarize key findings and actionable insights at each step. 
