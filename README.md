@@ -1,32 +1,35 @@
 # Customer Churn Prediction
 
-Predicting Customer Churn (whether a customer will stop using a service or product) is essential for businesses, epecially in telecom, where retaining customers is often more cost-effective than acquiring new ones. 
+Customer churn prediction helps businesses identify customers who are likely to stop using their services. In industries such as telecommunications, identifying potential churners can help businesses take preventive actions and improve customer retention.
 
-This repository demonstrates a complete machine learning workflow to build and evaluate a churn prediction model using the Telco Customer Churn dataset. 
+This project uses the Telco Customer Churn dataset to build and evaluate machine learning models for predicting whether a customer is likely to churn.
 
 Check out the live Tableau visualization [here](https://public.tableau.com/app/profile/urvashi.sahu6283/viz/CustomerChurnAnalysis_17797140159470/Dashboard1)
 
 ## Dataset
-This project uses the Telco Customer Churn dataset from Kaggle:<br>
+The dataset used in this project is the Telco Customer Churn dataset from Kaggle:<br>
 👉 [https://www.kaggle.com/datasets/blastchar/telco-customer-churn]
 
 The dataset includes information about:
-* Customers who left(Churn)
-* Services signed up for - phone, multiple lines, internet, online security, online backup, device protection, tech support, and streaming TV and streaming movies
-* Account details - tenure(how long they’ve been a customer), contract, payment method, paperless billing, monthly charges, and total charges
-* Demographic info - gender, age range, partners and dependents
+- **Churn:**: Whether the customer left the service
+- **Services:** Phone service, multiple lines, internet service, online security, online backup, device protection, technical support, streaming TV, and streaming movies
+- **Account information**: Tenure, contract type, payment method, paperless billing, monthly charges, and total charges
+- **Demographic information:** Gender, senior citizen status, partner, and dependents
 
 ## Objective 
 
-The goal is to build a model that can predict whether a customer will churn or not based on historical data.<br>
-This includes:
+The objective is to predict whether a customer will churn based on their historical service, account, and demographic information.<br>
 
-1. Data Cleaning and Preprocessing
-2. Exploratory Data Analysis (EDA)
-3. Handling Imbalanced Data
-3. Model Training and Evaluation
-4. Interpretation of Results
-5. Performance Comparison
+Since failing to identify a customer who is likely to churn can be costly for a business, recall for the churn class was used as the primary evaluation metric.
+
+The project covers:
+
+1. Data cleaning and preprocessing
+2. Exploratory data analysis (EDA)
+3. Feature engineering 
+4. Handling class imbalance
+5. Model training and comparison
+6. Model evaluation
 
 
 ## Tools And Technologies
@@ -36,27 +39,33 @@ This includes:
 | Libraries | Pandas, Numpy, Matplotlib, Seaborn, Scikit-learn Imbalanced-learn, SHAP and Streamlit|
 | Envinronment | VS code and Jupyter Notebook|
 
-## Steps In The Project
+## Project Workflow
 
-### Data Loading
-Load the dataset into a Pandas Dataframe and inspect basic properties such as shape, columns, missing values and duplicates.
+### 1. Data Preparation
 
-### Exploratory Data Analysis (EDA)
-Visualize key relationships, feature distributions and class distributions.
+Cleaned the dataset, handled missing values, created a new feature, removed highly correlated features, encoded categorical variables, and split the data into training and test sets.
 
-### Handle class Imbalance
-Address the class imbalance present in the dataset using the SMOTE technique. 
+### 2. Exploratory Data Analysis
 
-### Model Training
-Train multiple models (Logistic Regression, Decision Tree, Random Forest, XGBoost, and Gradient Boosting) using Stratified K-Fold Cross-Validation and compares them. 
+Analyzed customer characteristics, feature distributions, and relationships with churn to identify patterns in the data.
 
-### Model Evaluation
-Evaluate the performance of the model using recall as False negatives are more costly in customer churn analysis. 
+### 3. Model Training & Evaluation
 
-### Deployment
-The final model is deployed using streamlit on Streamlit Cloud. 
+Used Stratified K-Fold Cross-Validation and SMOTE to handle class imbalance. Compared Logistic Regression, Decision Tree, Random Forest, XGBoost, and Gradient Boosting using precision, recall, and accuracy.
 
-### Conclusion and insights
-Summarize key findings and actionable insights at each step. 
+### 4. Model Selection & Interpretation
 
+Selected Logistic Regression based on its recall performance and its simplicity. Used SHAP to understand feature contributions to the model's predictions.
 
+### 5. Deployment & Visualization
+
+Saved the trained model and encoder, built an interactive Streamlit application, deployed it on Streamlit Cloud, and created a Tableau dashboard for exploring churn patterns.
+--- 
+
+## Key Takeaways
+
+- Customer churn is influenced by a combination of service, account, and customer characteristics.
+- Class imbalance can make accuracy alone insufficient for evaluating churn models.
+- Recall was prioritized to reduce the number of actual churners missed by the model.
+- Logistic Regression provided a suitable balance between churn detection, interpretability, and simplicity.
+- SHAP was used to understand the features contributing to the model's predictions.
