@@ -60,7 +60,7 @@ Selected Logistic Regression based on its recall performance and its simplicity.
 ### 5. Deployment & Visualization
 
 Saved the trained model and encoder, built an interactive Streamlit application, deployed it on Streamlit Cloud, and created a Tableau dashboard for exploring churn patterns.
---- 
+
 
 ## Key Takeaways
 
